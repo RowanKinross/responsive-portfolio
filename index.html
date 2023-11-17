@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <!-- header / nav -->
+<!-- header / nav -->
   <header>
     <h1 class="headerFlexItem">Rowan Kinross</h1>
     <nav>
@@ -23,27 +23,47 @@
     </nav>
   </header>
 
-  <!-- hero image -->
-  <section class="heroImage">
-    <div>
-      <h2>Cool subtitle here!</h2>
+<!-- hero image -->
+  <section>
+    <div class="heroImageContainer">
+      <img id="heroImage" src="./images/rowan-branch-long.png" alt=""/>
+      <h2 id="coolSubtitle">Cool subtitle here!</h2>
     </div>
   </section>
 
-  <main class="pageWrapper">
+
+<!-- main grid -->  
+  <main id="mainGrid">
     <!-- about me -->
-    <section class="pageSection" id="about">
-      <h2>About Me</h2>
+    <section class="mainGridItem" id="about">
+      <h3>About Me</h3>
     </section>
 
     <!-- portfolio container -->
-    <section class="pageSection" id="work">
-      <h2>Work</h2>
+    <section class="mainGridItem" id="work">
+      <h4>Work</h4>
     </section>
 
     <!-- contact -->
-    <section class="pageSection contact" id="contact">
-      <h2>Contact Me</h2>
+    <section class="mainGridItem" id="contactMe">
+      <h5>Contact Me</h5>
+    </section>
+
+    <p class="mainGridItem" id="aboutP">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque assumenda omnis beatae harum repudiandae modi eius maiores error cum incidunt, ipsum tempore! Hic eaque voluptas voluptatem autem rerum reprehenderit recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, amet? Expedita at sequi, velit voluptate perspiciatis voluptas, repellat ipsum magnam illo nihil neque molestias minus sint facilis. Illum, excepturi rerum! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni cupiditate mollitia rem sint at placeat. Dolore aliquam, quidem vero doloribus minus aperiam architecto! Numquam vel, est quis dignissimos corporis nobis.
+    </p>
+    
+    <section class="mainGridItem" id="workGrid">
+      (5 grid images with text caption & hover)
+    </section>
+
+    <section class="mainGridItem" id="contactMeFlex">
+      <ul class="contactMeFlex"> 
+        <li class="contactMeFlexItem"> email </li>
+        <li class="contactMeFlexItem"> linkedIn </li>
+        <li class="contactMeFlexItem"> github </li>
+        <li class="contactMeFlexItem"> instagram </li>
+      </ul>
     </section>
   </main>
 </body>
