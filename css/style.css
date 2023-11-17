@@ -1,34 +1,32 @@
+:root {
+  /* declaring colour variables */
+  --orange: #f8b400; 
+  --light: #faf5e4;
+  --lightOpaque: rgba(	250,	245,	228, 0.8);
+  --green: #2c786c;
+  --dark: #004445;
+  }
+
+
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #f8b400;
-      /* temporary visualisation elements */
-      /* background-color: bisque; 
-      border: solid 1px brown;  */
+  color: var(--dark);
+      /*just for visualisation whilst developing*/
+        border-style: solid;
+        border-color: plum;
+        border-width: 1px;
 }
-/* colour pallet 
-first-color { 
-	background: #f8b400; 
-} -- orange
-second-color { 
-	background: #faf5e4; 
-} -- cream
-third-color { 
-	background: #2c786c; 
-} -- green
-fourth-color { 
-	background: #004445; 
-} -- blue */
+h1 {
+  font-size: xx-large;
+}
 
 /* header flex box (contains 2 items; a header and a nav bar) */
 header {
   display: flex;
-/*  flex-basis: auto;
-  align-content: center;
-  padding-top: 10px;
-  padding-bottom: 10px; */
-  background-color: #004445;
+  background-color: var(--dark);
   justify-content: space-between;
 }
   .headerFlexItem {
@@ -37,23 +35,24 @@ header {
     padding: 0px;
     padding-right: 20px;
     padding-left: 40px;
-    color: #004445;
-    background-color: #faf5e4;
+    color: var(--dark);
+    background-color: var(--light);
     justify-content:flex-start;
   }
-  /* nav bar flex box - contains 4 directory items */
+/* nav bar flex box - contains 4 directory items */
   .navFlex {
     padding: 10px;
     padding-right: 40px;
     margin: 10px;
     display: flex;
-    list-style-type: none;
     text-decoration: underline;
+    color: var(--orange);
   }
     .navFlexItem {
       padding:10px;
       margin: 10px;
-      background-color: #004445;
+      background-color: var(--dark);
+      color: var(--orange);
     }
 
 /* hero image */
@@ -70,8 +69,8 @@ header {
   position: absolute;
   bottom: 30px;
   right: 60px;
-  color: #004445;
-  background-color: 	rgba(	250,	245,	228, 0.8);
+  color: var(--dark);
+  background-color: var(--lightOpaque);
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -84,20 +83,34 @@ body {
   line-height: 1.5;
 }
 
-h3, h4, h5 {
+h2, h3, h4, h5 {
   font-size:x-large;
 }
 
 
 #mainGrid {
-  margin: 0px 5%;
   display: grid;
-  grid-template-rows: 300px 300px 300px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 300px 700px 100px;
+  grid-template-columns: 1fr 3fr;
   grid-template-areas: 
   "about aboutP"
   "work workGrid"
   "contactMe contactMeFlex";
+  color: var(--dark);
+}
+
+.mainGridItem {
+  margin: 20px;
+}
+
+/*main grid items listed */
+#about, #work, #contactMe {
+  border-style: none solid none none;
+  border-color: var(--dark);
+  border-width: 2px;
+  margin: 5%;
+  padding-right: 5%;
+  text-align: right;
 }
 #about {
   grid-area: about;
@@ -116,19 +129,57 @@ h3, h4, h5 {
 }
 #contactMeFlex {
   grid-area:contactMeFlex;
-
-/*
-h1 {
-
-}
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
 }
 
-p {
-  margin: 0;
+/*contact me flex */
+.contactMeFlex {
+  display: flex;
+  justify-content: space-around;
+  padding: 2%;
+  text-decoration: underline;
+}
+
+/* work grid */
+#workGrid {
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "workItem1 workItem1"
+  "workItem2 workItem3"
+  "workItem4 workItem5";
+  gap: 20px;
+}
+.workGridItem {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  display: grid;
+  justify-content: start;
+  align-content: end;
+  padding-bottom: 30px;
+}
+#workItem1 {
+  grid-area: workItem1;
+  background-image: url("");
+}
+#workItem2 {
+  grid-area: workItem2;
+  background-image: url("");
+}
+#workItem3 {
+  grid-area: workItem3;
+  background-image: url("");
+}
+#workItem4 {
+  grid-area: workItem4;
+  background-image: url("");
+}
+#workItem5 {
+  grid-area: workItem5;
+  background-image: url("");
+}
+.heading {
+  padding: 5px;
 }
