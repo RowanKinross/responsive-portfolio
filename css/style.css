@@ -1,6 +1,60 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+      /* temporary visualisation elements */
+      /* background-color: bisque; */
+      border: solid 1px brown;  
 }
+/* colour pallet 
+first-color { 
+	background: #f8b400; 
+} -- orange
+second-color { 
+	background: #faf5e4; 
+} -- cream
+third-color { 
+	background: #2c786c; 
+} -- green
+fourth-color { 
+	background: #004445; 
+} -- blue */
+
+/* header flex box (contains 2 items; a header and a nav bar) */
+header {
+  display: flex;
+/*  flex-basis: auto;
+  align-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px; */
+  color: #f8b400;
+  background-color: #004445;
+  justify-content: space-between;
+}
+  .headerFlexItem {
+    margin: 20px;
+    margin-left: 0;
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 40px;
+    background-color: #faf5e4;
+    justify-content:flex-start;
+  }
+  /* nav bar flex box - contains 4 directory items */
+  .navFlex {
+    padding: 10px;
+    padding-right: 40px;
+    margin: 10px;
+    display: flex;
+    list-style-type: none;
+    text-decoration: underline;
+  }
+    .navFlexItem {
+      padding:10px;
+      margin: 10px;
+      background-color: #004445;
+    }
+
 
 body {
   margin: 0;
@@ -9,7 +63,9 @@ body {
   line-height: 1.5;
 }
 
-h1,
+h1 {
+
+}
 h2,
 h3,
 h4,
