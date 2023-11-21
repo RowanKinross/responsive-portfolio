@@ -2,9 +2,11 @@
   /* declaring colour variables */
   --orange: #f8b400; 
   --light: #faf5e4;
-  --lightOpaque: rgba(	250,	245,	228, 0.8);
-  --green: #2c786c;
+  --lightOpaque: rgba(	250,	245,	228, 0.5);
+  --green: #2b786c;
   --dark: #004445;
+  --greenOpaque: rgba(43, 120, 108, 0.85)
+  
   }
 
 
@@ -15,12 +17,13 @@
   padding: 0;
   color: var(--dark);
       /*just for visualisation whilst developing*/
-        border-style: solid;
-        border-color: plum;
-        border-width: 1px;
+      /* border: 1px solid plum; */
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.5;
+
 }
 h1 {
-  font-size: xx-large;
+  font-size: 26pt;
 }
 
 /* header flex box (contains 2 items; a header and a nav bar) */
@@ -30,19 +33,15 @@ header {
   justify-content: space-between;
 }
   .headerFlexItem {
-    margin: 30px;
-    margin-left: 0;
-    padding: 0px;
-    padding-right: 20px;
-    padding-left: 40px;
+    margin: 30px 30px 30px 0;
+    padding: 0 20px 0 40px;
     color: var(--dark);
     background-color: var(--light);
     justify-content:flex-start;
   }
 /* nav bar flex box - contains 4 directory items */
   .navFlex {
-    padding: 10px;
-    padding-right: 40px;
+    padding: 10px 40px 10px 10px;
     margin: 10px;
     display: flex;
     text-decoration: underline;
@@ -71,22 +70,19 @@ header {
   right: 60px;
   color: var(--dark);
   background-color: var(--lightOpaque);
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 0 20px 0 20px;
+}
+
+/* main */
+main {
+  background-color: var(--light);
+  z-index: -1;
 }
 
 /* main grid */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  line-height: 1.5;
-}
-
 h2, h3, h4, h5 {
-  font-size:x-large;
+  font-size:20pt;
 }
-
 
 #mainGrid {
   display: grid;
@@ -96,7 +92,6 @@ h2, h3, h4, h5 {
   "about aboutP"
   "work workGrid"
   "contactMe contactMeFlex";
-  color: var(--dark);
 }
 
 .mainGridItem {
@@ -105,12 +100,18 @@ h2, h3, h4, h5 {
 
 /*main grid items listed */
 #about, #work, #contactMe {
+  border: 2px var(--dark);
   border-style: none solid none none;
-  border-color: var(--dark);
-  border-width: 2px;
   margin: 5%;
   padding-right: 5%;
   text-align: right;
+}
+#profile-image {
+  width: 80%;
+  z-index: -1;
+  border-radius: 100%;
+  float: inline-start;
+  padding: 4%;
 }
 #about {
   grid-area: about;
@@ -159,27 +160,46 @@ h2, h3, h4, h5 {
   justify-content: start;
   align-content: end;
   padding-bottom: 30px;
+  border: 5px solid var(--green);
 }
 #workItem1 {
   grid-area: workItem1;
-  background-image: url("");
+  background-image: url("../images/horiseon-deployed-page.jpg");
+  background-position-y: 32%;
+  background-size: 110%;
 }
+
 #workItem2 {
   grid-area: workItem2;
-  background-image: url("");
+  background-image: url("../images/prework-study-guide.png");
+  background-position-y: 18%;
+  background-size: 133%;
 }
 #workItem3 {
   grid-area: workItem3;
-  background-image: url("");
+  background-image: url("../images/tacos-hand-written.jpg");
 }
 #workItem4 {
   grid-area: workItem4;
-  background-image: url("");
+  background-image: url("../images/applause-meter.jpg");
+  background-size: cover;
+  background-position-y: 45%;
 }
 #workItem5 {
   grid-area: workItem5;
-  background-image: url("");
+  background-image: url("../images/student-bio.png");
+  background-position-x: left;
+  background-position-y: 40%;
+  background-size: 140%;
 }
 .heading {
-  padding: 5px;
+  padding: 15px;
+  background-color: var(--greenOpaque);
+  font-size: 20px;
+  color: var(--light);
+}
+.toolsUsed {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--orange);
 }
