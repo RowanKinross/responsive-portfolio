@@ -156,6 +156,7 @@ h2, h3, h4, h5 {
   background-size: cover;
   background-repeat: no-repeat;
   cursor: pointer;
+  text-decoration: none;
   display: grid;
   justify-content: start;
   align-content: end;
