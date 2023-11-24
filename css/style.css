@@ -1,3 +1,4 @@
+/* Styles affecting all content */
 :root {
   /* declaring colour variables */
   --orange: rgb(250, 183, 0);
@@ -6,55 +7,58 @@
   --green: #2b786c;
   --dark: #004445;
   --greenOpaque: rgba(43, 120, 108, 0.85)
-  }
-
-
-
-* {
+}
+*  {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   color: var(--dark);
-      /*just for visualisation whilst developing*/
-      /* border: 1px solid plum; */
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height: 1.5;
-
+      /*just for visualisation whilst developing:
+      border: 1px solid plum; */
 }
+
+
+
+/* Heading and Navigation - header flex box contains 2 items; a header and a nav bar */
 h1 {
   font-size: 26pt;
 }
-
-/* header flex box (contains 2 items; a header and a nav bar) */
 header {
   display: flex;
   background-color: var(--dark);
   justify-content: space-between;
 }
-  .headerFlexItem {
-    margin: 30px 30px 30px 0;
-    padding: 0 20px 0 40px;
-    color: var(--dark);
-    background-color: var(--light);
-    justify-content:flex-start;
-  }
-/* nav bar flex box - contains 4 directory items */
-  .navFlex {
+.headerFlexItem {
+  margin: 30px 30px 30px 0;
+  padding: 0 20px 0 40px;
+  color: var(--dark);
+  background-color: var(--light);
+  justify-content:flex-start;
+}
+
+
+
+/* Navigation bar -nav flex box contains 4 directory items: 'About Me', 'Work', 'Contact Me' and 'CV' */
+.navFlex {
     padding: 10px 40px 10px 10px;
     margin: 10px;
     display: flex;
     flex-wrap: wrap;
     text-decoration: underline;
     color: var(--orange);
-  }
-    .navFlexItem {
+}
+.navFlexItem {
       padding:10px;
       margin: 10px;
       background-color: var(--dark);
       color: var(--orange);
-    }
+}
 
-/* hero image */
+
+
+/* hero image - contains decorative image (illustration of a branch) and a 'cool subtitle' */
 .heroImageContainer {
   position: relative;
   text-align: center;
@@ -73,17 +77,19 @@ header {
   padding: 0 20px 0 20px;
 }
 
-/* main */
+
+
+/* styles affecting the main body generally */
 main {
   background-color: var(--light);
-  z-index: -1;
 }
 
-/* main grid */
-h2, h3, h4, h5 {
+
+
+/* main grid - contains 3 headings: 'About Me', 'Work' and 'Contact Me', and 3 sections: paragraph about me, a grid of examples of work and a box containing links for contacting me */
+h2, h3, h4, h5 /*'cool subtitle' and grid headings*/ {
   font-size:20pt;
 }
-
 #mainGrid {
   display: grid;
   grid-template-rows: 300px 700px 100px;
@@ -93,12 +99,10 @@ h2, h3, h4, h5 {
   "work workGrid"
   "contactMe contactMeFlex";
 }
-
 .mainGridItem {
   margin: 20px;
 }
-
-/*main grid items listed */
+/* main grid items listed */
 #about, #work, #contactMe {
   border: 2px var(--dark);
   border-style: none solid none none;
@@ -119,23 +123,15 @@ h2, h3, h4, h5 {
   position: relative;
   top: -10%;
 }
-#aboutP {
-  grid-area: aboutP;
-}
-#work {
-  grid-area: work;
-}
-#workGrid {
-  grid-area: workGrid;
-}
-#contactMe {
-  grid-area: contactMe;
-}
-#contactMeFlex {
-  grid-area:contactMeFlex;
-}
+#aboutP {grid-area: aboutP;}
+#work {grid-area: work;}
+#workGrid {grid-area: workGrid;}
+#contactMe {grid-area: contactMe;}
+#contactMeFlex {grid-area: contactMeFlex;}
 
-/*contact me flex */
+
+
+/* contact me flex box - Email, LinkedIn, GitHub, Insta */
 .contactMeFlex {
   display: flex;
   justify-content: space-around;
@@ -143,7 +139,9 @@ h2, h3, h4, h5 {
   text-decoration: underline;
 }
 
-/* work grid */
+
+
+/* work grid - 5 items: Code Refactor, pre-work study guide, taco nights, applause meter and student bio */
 #workGrid {
   display: grid;
   grid-template-rows: 2fr 1fr 1fr;
@@ -170,14 +168,12 @@ h2, h3, h4, h5 {
 .workGridItem:hover {
   box-shadow: inset 0px 0px 8px var(--green), 0 0 15px var(--orange);
 }
-
 #workItem1 {
   grid-area: workItem1;
   background-image: url("../images/horiseon-deployed-page.jpg");
   background-position-y: 32%;
   background-size: 110%;
 }
-
 #workItem2 {
   grid-area: workItem2;
   background-image: url("../images/prework-study-guide.png");
@@ -201,19 +197,23 @@ h2, h3, h4, h5 {
   background-position-y: 40%;
   background-size: 140%;
 }
-.heading {
+.heading /*heading within each grid item*/ {
   padding: 15px;
   background-color: var(--greenOpaque);
   font-size: 20px;
   color: var(--light);
 }
-.toolsUsed {
+.toolsUsed /*detailing underneath grid headings*/ {
   font-size: 12px;
   font-style: italic;
   color: var(--orange);
 }
-/* breakpoint for mob*/
+
+
+
+/* breakpoint for mobile (480px max) */
 @media screen and (max-width: 480px) {
+  /*switching both grids to columns */
   #workGrid {
     grid-template-rows: 150px 150px 150px 150px 150px;
     grid-template-columns: 1fr;
@@ -238,6 +238,7 @@ h2, h3, h4, h5 {
     "contactMeFlex";
     justify-content: center;
   }
+  /* altering borders of headers, removing line breaks and switching the flow of profile image with 'About Me' Header */
   #about, #work, #contactMe {
     border-style: none none solid none;
     margin-right: 5px;
@@ -259,8 +260,3 @@ h2, h3, h4, h5 {
     flex-direction: column-reverse;
   }
 }
-
-/* breakpoint for 
-@media screen and (min-width: 768px) {
-  
-}*/
