@@ -2,6 +2,7 @@
 :root {
   /* declaring colour variables */
   --orange: rgb(250, 183, 0);
+  --orangeOpaque: rgb(250, 183, 0, 0.2);
   --light: #faf5e4;
   --lightOpaque: rgba(	250,	245,	228, 0.5);
   --green: #2b786c;
@@ -165,9 +166,6 @@ h2, h3, h4, h5 /*'cool subtitle' and grid headings*/ {
   border: 5px solid var(--green);
   transition: all 0.5s ease-in-out;
 }
-.workGridItem:hover {
-  box-shadow: inset 0px 0px 8px var(--green), 0 0 15px var(--orange);
-}
 #workItem1 {
   grid-area: workItem1;
   background-image: url("../images/horiseon-deployed-page.jpg");
@@ -197,13 +195,33 @@ h2, h3, h4, h5 /*'cool subtitle' and grid headings*/ {
   background-position-y: 40%;
   background-size: 140%;
 }
-.heading /*heading within each grid item*/ {
+/* work grid hovers - using box shadow & linear gradient */
+.workGridItem:hover {
+  box-shadow: 0px 0px 15px var(--green)
+}
+#workItem1:hover {
+  background-image: linear-gradient(0deg, var(--orangeOpaque), var(--orangeOpaque)), url("../images/horiseon-deployed-page.jpg");
+}
+#workItem2:hover {
+  background-image: linear-gradient(0deg, var(--orangeOpaque), var(--orangeOpaque)), url("../images/prework-study-guide.png");
+}
+#workItem3:hover {
+  background-image: linear-gradient(0deg, var(--orangeOpaque), var(--orangeOpaque)), url("../images/tacos-hand-written.jpg");
+}
+#workItem4:hover {
+  background-image: linear-gradient(0deg, var(--orangeOpaque), var(--orangeOpaque)), url("../images/applause-meter.jpg");
+}
+#workItem5:hover {
+  background-image: linear-gradient(0deg, var(--orangeOpaque), var(--orangeOpaque)), url("../images/student-bio.png");
+}
+/* heading and detailing as titles to the work links/images */
+.heading {
   padding: 15px;
   background-color: var(--greenOpaque);
   font-size: 20px;
   color: var(--light);
 }
-.toolsUsed /*detailing underneath grid headings*/ {
+.toolsUsed {
   font-size: 12px;
   font-style: italic;
   color: var(--orange);
