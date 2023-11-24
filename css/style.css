@@ -43,6 +43,7 @@ header {
     padding: 10px 40px 10px 10px;
     margin: 10px;
     display: flex;
+    flex-wrap: wrap;
     text-decoration: underline;
     color: var(--orange);
   }
@@ -105,15 +106,18 @@ h2, h3, h4, h5 {
   padding-right: 5%;
   text-align: right;
 }
-#profile-image {
-  width: 80%;
-  z-index: -1;
-  border-radius: 100%;
-  float: inline-start;
-  padding: 4%;
-}
 #about {
   grid-area: about;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+#profileImage {
+  width: 70%;
+  align-self: center;
+  border-radius: 100%;
+  position: relative;
+  top: -10%;
 }
 #aboutP {
   grid-area: aboutP;
@@ -208,3 +212,55 @@ h2, h3, h4, h5 {
   font-style: italic;
   color: var(--orange);
 }
+/* breakpoint for mob*/
+@media screen and (max-width: 480px) {
+  #workGrid {
+    grid-template-rows: 150px 150px 150px 150px 150px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "workItem1"
+    "workItem2" 
+    "workItem3"
+    "workItem4"
+    "workItem5";
+    gap: 20px; 
+  }
+  #mainGrid {
+    display: grid;
+    grid-template-rows: 450px 550px 100px 1000px 100px 100px;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "about"
+    "aboutP"
+    "work"
+    "workGrid"
+    "contactMe"
+    "contactMeFlex";
+    justify-content: center;
+  }
+  #about, #work, #contactMe {
+    border-style: none none solid none;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+  br {
+    display: none;
+  }
+  #work, #contactMe {
+    align-self: self-end;
+  }
+  #profileImage {
+    margin-bottom: 30px;
+    top: 0;
+  }
+  #about {
+    flex-direction: column-reverse;
+  }
+}
+
+/* breakpoint for 
+@media screen and (min-width: 768px) {
+  
+}*/
