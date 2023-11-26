@@ -24,7 +24,7 @@ As this is a personal project, designed to challenge and test my skills, I am no
 
 ## Credits
 
-edX challenge materials for the source code, images and for setting the challenge
+edX challenge materials for setting the challenge and providing me with the skills to take on this project.
 
 ## License
 
