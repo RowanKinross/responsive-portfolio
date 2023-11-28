@@ -278,5 +278,6 @@ h2, h3, h4, h5 /*'cool subtitle' and grid headings*/ {
   }
   #about {
     flex-direction: column-reverse;
+    justify-content: end;
   }
 }
